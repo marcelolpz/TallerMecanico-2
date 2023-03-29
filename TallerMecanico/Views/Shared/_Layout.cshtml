@@ -1,0 +1,75 @@
+﻿@using Microsoft.AspNetCore.Http;
+@using TallerMecanico.Models.ViewModels;
+@using Newtonsoft.Json;
+@inject IHttpContextAccessor HttpContextAcessor;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TallerMecanico</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- Enlace al archivo CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+
+    <!-- Enlace al archivo JavaScript de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <!-- Option 1: Include in HTML -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+
+</head>
+<body>
+    <header>
+        @{
+            var sesionBase64 = HttpContextAcessor.HttpContext.Session.GetString("usuarioObjeto");
+            var base64EncodedBytes = System.Convert.FromBase64String(sesionBase64);
+            var sesion = System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
+            UsuarioLoginVm usuarioObjeto = JsonConvert.DeserializeObject<UsuarioLoginVm>(sesion);
+        }
+        <nav class="navbar navbar-expand-lg navbar-home">
+            <div class="container">
+                <a style="color:white; font-size:30px;" class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"> <i class="bi bi-gear-fill"></i> Taller Mecánico</a>
+                <div class="collapse navbar-collapse justify-content-end">
+                    
+                        @foreach (var menu in usuarioObjeto.Menu)
+                        {
+                            @if (menu.Modulos.Count > 0)
+                            {
+                                @foreach (var submenu in menu.Modulos)
+                                {
+                                    <li>
+                                    <a class="dropdown-item" style="color:white; font-size:30px;" asp-area="" asp-controller="@submenu.Controller" asp-action="@submenu.Metodo">@submenu.Nombre</a>
+                                    </li>
+                                }
+                            }
+                        }
+                   
+
+                    <li class="nav-item">
+                        <a class="dropdown-item text-muted" style="color:white; font-size:30px; text-decoration-color:white;" asp-area="" asp-controller="Home" asp-action="CerrarSesion"> <i class="bi bi-box-arrow-left"></i> Cerrar Sesión</a>
+                        </li>
+                   
+                   
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div>
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Taller Mecánico Ensigna - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

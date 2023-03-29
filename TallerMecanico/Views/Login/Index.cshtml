@@ -1,0 +1,74 @@
+﻿@using TallerMecanico.Models.ViewModels;
+@model UsuarioLoginVm
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+
+<div class="fondo-login">
+
+    @if (!string.IsNullOrEmpty(@ViewBag.Error))
+    {
+        <div class="@ViewBag.ClaseMensaje" role="alert" id="success-alert">
+            <strong>@ViewBag.Error</strong>
+        </div>
+    }
+
+
+    <div class="left-login">
+
+        <div class="titulo-login">
+            <h1>Taller Mecánico Ensigna</h1>
+        </div>
+        <div class="titulo-inicio">
+            <h2>Iniciar Sesión</h2>
+        </div>
+        <div class="insert" id="form-design">
+            <!--start main-->
+
+            <form method="post" asp-action="Index">
+                <div>
+                    <label asp-for="Email" class="form-class"></label>
+                    <input asp-for="Email" class="form-control" placeholder="Ingrese el correo" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div>
+                    <br />
+                    <label asp-for="Password" class="control-label"></label>
+                    <input type="password" asp-for="Password" class="form-control" placeholder="Ingrese la clave" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+
+
+                <br />
+
+                <div class="form-section mt-3">
+                    @Html.ActionLink("Olvido su contraseña?","StartRecovery","Access")
+                </div>
+                
+                <div class="sign" id="button-position">
+                    <div class="submit">
+                        <input type="submit" id="button-shape" value="Iniciar Sesión" />
+                    </div>
+
+                    <div class="clear"> <br /> <br /> </div>
+                </div>
+            </form>
+
+        </div>
+
+        <div class="social-buttons">
+            <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+            <a href="https://web.whatsapp.com/"><i class="bi bi-whatsapp"></i></a>
+            <a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>
+        </div>
+
+
+    </div>
+
+
+
+</div>
+

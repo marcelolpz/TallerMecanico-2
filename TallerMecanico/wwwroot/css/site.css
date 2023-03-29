@@ -1,0 +1,278 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+
+.fondo-login {
+    display: flex;
+    background-image: url("../img/Login_img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 600px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Margin bottom by footer height */
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* Ajusta la imagen de fondo al tamaño de la pantalla */
+    min-height: 100%;
+    min-width: 100%;
+    /* Ajusta la imagen de fondo para cubrir todo el contenedor */
+    object-fit: cover;
+    z-index: -1;
+    overflow-x: hidden;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+.left-login {
+    display: flex;
+    color: white;
+    width: 720px;
+    margin: 180px 10px 50px 20px;
+    padding: 0;
+}
+
+.social-buttons {
+    display: block;
+    margin: 10px auto;
+    padding: 70px 0px 0px 120px;
+    font-size: 45px;
+    color: white;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+}
+
+.titulo-login {
+    text-align: center;
+    margin: 0 10px;
+    padding: 0;
+}
+
+    .titulo-login h1 {
+        font-size: 45px;
+    }
+
+.titulo-inicio {
+    text-align: center;
+    margin: 0px 5px 10px 55px;
+    padding: 0px 10px 20px 70px;
+}
+
+    .titulo-inicio h2 {
+        font-size: 32px;
+    }
+
+#form-design {
+    padding: 0px 50px 0px 160px;
+}
+
+#button-position {
+    text-align: center;
+    margin: 0px 5px 10px 5px;
+    padding: 10px 5px 5px 5px;
+}
+
+.input-login {
+    padding: 0px 80px 0px 110px;
+}
+
+#button-shape {
+    border: none;
+    background-color: coral;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    color: white;
+}
+
+.nav-recovery {
+    color: #060724;
+    padding: 10px 20px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px #ccc;
+    padding: 10px;
+    width: 1300px;
+    height: 600px;
+    font-size: 28px;
+    margin-left: 400px;
+}
+
+.custom-input {
+    font-size: 28px;
+    padding: 25px;
+    border-radius: 1000px;
+}
+
+#button-recovery {
+    border: none;
+    background-color: #060724;
+    padding: 12px 27px;
+    border-radius: 8px;
+    font-size: 25px;
+    color: white;
+}
+
+ul {
+    margin: 0px;
+    padding: 30px 20px;
+    font-size: 30px;
+    background-color: #060724;
+  
+}
+
+#fondo-home {
+    display: flex;
+    background-image: url('../img/Home.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 110vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-home {
+    background-color: #060724;
+    font-size: 30px;
+    display: inline-block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    list-style-type: none;
+    
+    overflow: hidden;
+}
+
+.btn-outline-dark {
+    background-color: green;
+    border-color: green;
+    color: white;
+    font-size: 26px;
+   
+    width:250px;
+}
+.bi-plus-lg {
+    color: white;
+    font-size:25px;
+}
+table {
+    margin: 20px 40px 10px 40px;
+    padding: 2px 10px 2px 20px;
+    width: 2000px;
+}
+td, th {
+    font-size: 18px;
+    width: 20%;
+    padding: 20px;
+    text-align: center;
+}
+.h3 {
+    font-size: 25px;
+    background-color: #060724;
+    margin-left:10px;
+}
+div > h3 {
+    background-color: #060724;
+    color: white;
+    align-items: center;
+    padding:30px;
+    width:2000px;
+    border: none;
+
+}
+
+.table-container-div{
+    width: 2000px;
+}
+
+.div-insertar{
+    width: 2400px;
+    margin-left: 10px;
+}
+
+.div-eliminar {
+    width: 1500px;
+    height: 400px;
+    margin-left: 270px;
+}
+
+#botonRecovery {
+    background-color: green;
+    color: white;
+}

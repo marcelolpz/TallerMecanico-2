@@ -1,0 +1,38 @@
+﻿@using TallerMecanico.Models.ViewModels;
+@model RecoveryPasswordVm
+@{
+    ViewData["Title"] = "Recovery";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<div class="form-box">
+
+    <form class="form" action="@Url.Content("~/Access/Recovery")" method="post">
+        @if (!string.IsNullOrEmpty(@ViewBag.Error))
+        {
+            <div class="@ViewBag.ClaseMensaje" role="alert" id="success-alert">
+                <strong> @ViewBag.Error</strong>
+            </div>
+        }
+
+
+        <ul>
+            <li style="color:white;"> <i class="bi bi-gear-fill"></i> Taller Mecánico Ensigna</li>
+
+        </ul>
+
+        <br>
+        <br>
+        <div class="card" style="text-align:center;">
+            <div class="card-header" style="background-color:#060724; color: white;"> Cambio de contraseña </div>
+            <br>
+            @Html.HiddenFor(d=>d.token)
+            <label class="form-control">Escribe tu nueva contraseña</label>
+            @Html.PasswordFor(d=>d.Password,new{@class="form-control"})
+            <label class="form-control">Ingresa nuevamente tu contraseña</label>
+            @Html.PasswordFor(d=>d.Password2,new{@class="form-control"})
+            <br />
+            <button type="submit" class="boton" id="botonRecovery">Recuperar</button>
+        </div>
+    </form>
+
